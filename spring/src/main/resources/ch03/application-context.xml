@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- @PostConstruct와 @PreDestroy 사용하기 위해 CommonAnnotationBeanPostProcessor 전처리기 등록 필요 -->
+	<context:annotation-config />
+	<bean id="byInterface" class="com.inminhouse.study.spring.ch03.ByInterface" />
+	<bean id="byAnnotation" class="com.inminhouse.study.spring.ch03.ByAnnotation" />
+	<bean id="byCustom" class="com.inminhouse.study.spring.ch03.ByCustom" init-method="init" destroy-method="destroy" />
+	
+</beans>
