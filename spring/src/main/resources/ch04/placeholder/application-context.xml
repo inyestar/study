@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- location의 파일을 읽어와 플레이스홀더(${}) 값을 실제 값으로 변경
+		 아래 태그로 PropertySourcesPlaceholderConfigurer가 빈으로 등록되며 (가장 먼저 등록되는 빈)
+		 해당 객체는 파일에서 프로퍼티를 찾을 수 없을 경우 Enviroment에서 다시 한번 값을 찾는다.
+	 -->
+	<context:property-placeholder location="classpath:/ch04/db.properties" />
+	<bean id="connectionProvider" class="com.inminhouse.study.spring.ch04.placeholder.ConnectionProvider"
+		init-method="init">
+		<property name="dirver" value="${db.driver}" />
+		<property name="user" value="${db.user}" />
+		<property name="password" value="${db.password}" />
+		<property name="url" value="${db.url}" />
+	</bean>
+</beans>
