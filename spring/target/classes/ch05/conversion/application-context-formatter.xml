@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   		
+	<!-- 
+		DefaultFormmatingConversionSerivce를 등록해줌
+		DefaultConversionSerivce가 제공하는 Converter/GenericConverter 외에 날짜/시간 변환을 위한 Formatter와 Converter도 추가 등록
+		@DateTimeFormat 이나 @NumberFormat 애너테이션 제공
+	 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="formatters">
+			<set>
+				<bean class="com.inminhouse.study.spring.ch05.conversion.MoneyForamtter" />
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="restClient" class="com.inminhouse.study.spring.ch05.conversion.RestClient">
+		<property name="apiDate" value="2010-03-01 09:30:00" />
+	</bean>
+	
+	<bean id="simulator"  class="com.inminhouse.study.spring.ch05.property.InvestmentSimulator">
+		<property name="minimumAmount" value="10000WON" />
+	</bean>
+</beans>

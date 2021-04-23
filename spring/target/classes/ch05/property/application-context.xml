@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 커스텀 PropertyEditor가 같은 패키지내에 있지 않거나 유효한 명명 규칙을 사용할 수 없을 경우 
+		CustomEditorConfigurer를 이용해서 커스텀 에디터를 추가해야 한다.
+	-->
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="com.inminhouse.study.spring.ch05.property.Money" 
+					value="com.inminhouse.study.spring.ch05.property.AnotherMoneyEditor" />
+			</map>
+		</property>
+		<!-- propertyEditor에 매개변수를 지정하고 싶을 때 사용함 -->
+		<property name="propertyEditorRegistrars">
+			<list>
+				<ref bean ="cusotmPropertyEditorRegistrar"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="cusotmPropertyEditorRegistrar" class="com.inminhouse.study.spring.ch05.property.CustomPropertyEditorRegister">
+		<property name="datePattern" value="yyyy-MM-dd HH:mm:ss" />
+	</bean>
+	
+	<bean id="restClient" class="com.inminhouse.study.spring.ch05.property.RestClient">
+		<property name="serviceUrl" value="https://www.google.com/haha"/>
+		<property name="apiDate" value="2010-03-01 09:30:00" />
+	</bean>
+	
+	<bean id="simulator"  class="com.inminhouse.study.spring.ch05.property.InvestmentSimulator">
+		<property name="minimumAmount" value="10000WON" />
+	</bean>
+</beans>
