@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd
+	   		http://www.springframework.org/schema/aop
+	   		http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- @Aspect 애너테이션이 적용된 빈을 Aspect로 사용하게 해줌 
+	    @Configuration에서는 @EnableAspectJAutoProxy로 활성화 가능
+	    각 aop 설정마다 proxy-target-class="true" 속성을 사용하면 프록시 객체 생성 시 인터페이스가 아닌 클래스 기준으로 생성됨
+	-->
+	<aop:aspectj-autoproxy />
+	
+	<!-- Aspect 빈 등록 -->
+	<bean id="traceAspect" class="com.inminhouse.study.spring.ch06.annotation.ProfilingAspect" />
+	<bean id="cacheAsepct" class="com.inminhouse.study.spring.ch06.annotation.ArticleCacheAspect" />
+	
+	<bean id="writableArticleService" class="com.inminhouse.study.spring.ch06.quickstart.WritableArticleServiceImpl">
+		<constructor-arg><ref bean="articleDao" /></constructor-arg>
+	</bean>
+	<bean id="readableArticleService" class="com.inminhouse.study.spring.ch06.pojo.ReadableArticleServiceImpl">
+		<property name="articleDao" ref="articleDao" />
+	</bean>
+	
+	<bean id="articleDao" class="com.inminhouse.study.spring.ch06.quickstart.MemoryArticleDao" />
+</beans>

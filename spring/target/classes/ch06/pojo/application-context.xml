@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd
+	   		http://www.springframework.org/schema/aop
+	   		http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- 공통 기능 클래스 -->
+	<bean id="cache" class="com.inminhouse.study.spring.ch06.pojo.ArticleCacheAdvice" />
+	
+	<!-- Aspect 설정 -->
+	<aop:config>
+		<aop:aspect id="cacheAspect" ref="cache">
+			<aop:around method="cache" pointcut="execution(public * *..ReadableArticleService.*(..))" />
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id="readableArticleService" class="com.inminhouse.study.spring.ch06.pojo.ReadableArticleServiceImpl">
+		<property name="articleDao" ref="articleDao" />
+	</bean>
+	
+	<bean id="articleDao" class="com.inminhouse.study.spring.ch06.quickstart.MemoryArticleDao" />
+</beans>
