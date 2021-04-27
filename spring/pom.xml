@@ -15,6 +15,8 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   </properties>
   
   <dependencies>
+  	
+  	<!-- CONTEXT -->
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
@@ -33,22 +35,78 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   		<version>1.7.4</version>
   	</dependency>
   	
+  	<!-- MVC -->
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet-api</artifactId>
+  		<version>3.0.1</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet.jsp</groupId>
+  		<artifactId>jsp-api</artifactId>
+  		<version>2.2</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>jstl</artifactId>
+  		<version>1.2</version>
+  		<scope>runtime</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>${spring.dependency.version}</version>
+  	</dependency>
+  	
+  	<!-- VALIDATION 애너테이션 사용 -->
+  	<dependency>
+  		<groupId>javax.validation</groupId>
+  		<artifactId>validation-api</artifactId>
+  		<version>1.0.0.GA</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-validator</artifactId>
+  		<version>4.3.1.Final</version>
+  	</dependency>
+  	
+  	
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   		<version>3.8.1</version>
   		<scope>test</scope>
   	</dependency>
+  	
   </dependencies>
   
   <build>
   	<plugins>
   		<plugin>
-  			<artifactId>maven-compiler-plugin</artifactId>
+  			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.6.2</version>
   			<configuration>
   				<source>1.8</source>
   				<target>1.8</target>
   				<encoding>${project.build.sourceEncoding}</encoding>
+  			</configuration>
+  		</plugin>
+  		<plugin>
+  			<groupId>org.eclipse.jetty</groupId>
+  			<artifactId>jetty-maven-plugin</artifactId>
+  			<!-- 책에서 추천한 9.1.1 하면 에러남 -->
+  			<version>9.4.6.v20170531</version>
+  			<configuration>
+  				<!-- <webAppSourceDirectory>src\main\webapp</webAppSourceDirectory> -->
+  				<scanIntervalSeconds>3</scanIntervalSeconds>
+  				<reload>manual</reload>
+  				<webApp>
+  					<contextPath>/spring</contextPath>
+  				</webApp>
   			</configuration>
   		</plugin>
   	</plugins>
