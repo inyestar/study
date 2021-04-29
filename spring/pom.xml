@@ -66,13 +66,34 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   		<artifactId>validation-api</artifactId>
   		<version>1.0.0.GA</version>
   	</dependency>
-  	
   	<dependency>
   		<groupId>org.hibernate</groupId>
   		<artifactId>hibernate-validator</artifactId>
   		<version>4.3.1.Final</version>
   	</dependency>
   	
+  	<!-- Jetty Server -->
+  	<dependency>
+  		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-server</artifactId>
+ 		<version>9.4.40.v20210413</version>
+  	</dependency>
+  	<dependency>
+    	<groupId>org.eclipse.jetty</groupId>
+    	<artifactId>jetty-webapp</artifactId>
+    	<version>9.4.40.v20210413</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.1.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>apache-jsp</artifactId>
+		<version>9.4.40.v20210413</version>
+	</dependency>
+
   	
   	<dependency>
   		<groupId>junit</groupId>

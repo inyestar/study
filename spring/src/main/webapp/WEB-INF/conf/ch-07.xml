@@ -35,13 +35,22 @@
 	</bean>
 	
 	<!-- 메시지 소스 -->
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource ">
 		<property name="basenames">
 			<list>
-				<value>/WEB-INF/message/error</value>
+				<!-- relodable은 build path 안에 properties 파일이 있어야함 -->
+				<value>classpath:/messages/error</value>
+<!-- 				<value>/WEB-INF/messages/error</value> -->
 			</list>
 		</property>
+		<property name="cacheSeconds" value="5" />
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
-	<bean class="com.inminhouse.study.spring.ch07.quickstart.HelloController" />
+	<bean id="messageSourceAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+        <constructor-arg ref="messageSource"/>
+    </bean>
+	
+	<bean class="com.inminhouse.study.spring.ch07.quickstart.HelloController">
+		<property name="msa" ref="messageSourceAccessor" />
+	</bean>
 </beans>

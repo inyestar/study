@@ -2,6 +2,7 @@ package com.inminhouse.study.spring.ch07.quickstart;
 
 import javax.validation.Valid;
 
+import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloController {
 	
+	private MessageSourceAccessor msa;
+	
+	public void setMsa(MessageSourceAccessor msa) {
+		this.msa = msa;
+	}
+
 	@RequestMapping("/hello.do")
 	public String hello(Model model) {
 		model.addAttribute("greeting", "안녕하세요");
@@ -39,12 +46,19 @@ public class HelloController {
 	
 	@RequestMapping("/index2")
 	public String index2(@Valid NewUser user, Errors errors) {
+		System.out.println(msa.getMessage("NotEmpty.newUser.email"));
 		if(errors.hasErrors()) {
 			for(ObjectError error : errors.getAllErrors()) {
 				System.out.println(error);
 			}
 			return "error";
 		}
+		return "index";
+	}
+	
+	@RequestMapping("/index3")
+	public String index3() {
+
 		return "index";
 	}
 }

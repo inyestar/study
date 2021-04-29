@@ -56,6 +56,7 @@ D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch04\JavaConfig.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\property\RestClient.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch04\Main.java
+D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch07\quickstart\NewUser.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch02\AuthException.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch07\quickstart\HelloController.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch02\Config.java
@@ -63,12 +64,14 @@ D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch06\pojo\ReadableArticleServiceImpl.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch06\quickstart\Article.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch06\pojo\MainByXml.java
+D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch08\JettyServer.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\bean\CacheStockReader.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch01\MainBySpring.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\bean\StockReader.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\bean\TraceBeanPostProcessor.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch04\profile\JndiConnectionProvider.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\property\MoneyEditor.java
+D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch08\DownloadView.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch02\AuthFailLogger.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch04\profile\JdbcConnectionProvider.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\bean\MainByXml.java
@@ -76,6 +79,7 @@ D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\property\Money.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch05\conversion\MoneyForamtter.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch02\UserNotFoundException.java
+D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch08\DownloadController.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch01\Project.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch02\UserRepository.java
 D:\Git\Repositories\study\spring\src\main\java\com\inminhouse\study\spring\ch03\ByCustom.java
