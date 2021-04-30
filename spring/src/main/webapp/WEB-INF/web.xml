@@ -17,7 +17,7 @@
          			따로 설정하지 않을 경우 /WEB-INF/dispatcher-servlet.xml을 이용해 스프링 컨테이너 설정
          		 -->
          		<param-name>contextConfigLocation</param-name>
-         		<param-value>/WEB-INF/conf/ch-07.xml</param-value>
+         		<param-value>/WEB-INF/conf/ch-09.xml</param-value>
          	</init-param>
          	<!-- 
          		@Configuration으로 설정한 경우
