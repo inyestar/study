@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd
+	   		http://www.springframework.org/schema/jee
+	   		http://www.springframework.org/schema/jee/spring-jee.xsd">
+		
+		
+		<!-- 로컬 테스트 목적으로 drivermanagerdatasource는 커넥션 풀이 아님 -->
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClass" value="com.mysql.jdbc.Driver" />
+			<property name="jdbcUrl" value="jdbc:mysql://localhost/puter" />
+			<property name="user" value="puter" />
+			<property name="password" value="1234" />
+		</bean>
+</beans>
