@@ -3,6 +3,7 @@
   - 하드웨어 < 커널 < 셸 < 응용프로그램
   - GNU 프로젝트
   - Fedora > RHEL > CentOS
+  
 * 커널
   - https://www.kernel.org
 
